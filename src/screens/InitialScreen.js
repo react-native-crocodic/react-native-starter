@@ -1,4 +1,5 @@
 import React, {
+    useEffect,
     useRef,
     useState
 } from 'react'
@@ -15,8 +16,22 @@ import MapView, {
     PROVIDER_GOOGLE
 } from 'react-native-maps'
 
+import {
+    GoogleSignin,
+    GoogleSigninButton,
+    statusCodes
+} from "react-native-google-signin"
+
 const InitialScreen = () => {
     const [typedText, SetTypedText] = useState("")
+    
+    useEffect(() => {
+        GoogleSignin.configure()
+
+        return (() => {
+
+        })
+    }, [])
 
     let textInput = useRef()
 
@@ -24,6 +39,28 @@ const InitialScreen = () => {
         SetTypedText("")
 
         textInput.current.blur()
+    }
+
+    async function GoogleSignIn() {
+        try {
+            await GoogleSignin.hasPlayServices()
+    
+            const userInfo = await GoogleSignin.signIn()
+    
+            console.log("RESULT GOOGLE", userInfo)
+        } catch (error) {
+            console.log(error, error.code)
+    
+            if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+                // user cancelled the login flow
+            } else if (error.code === statusCodes.IN_PROGRESS) {
+                // operation (f.e. sign in) is in progress already
+            } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+                // play services not available or outdated
+            } else {
+                // some other error happened
+            }
+        }
     }
 
     return (
@@ -68,6 +105,18 @@ const InitialScreen = () => {
                     Done
                 </Text>
             </TouchableOpacity>
+
+            <GoogleSigninButton
+                color = {GoogleSigninButton.Color.Light}
+                size = {GoogleSigninButton.Size.Wide}
+                style = {{
+                    alignSelf: "center",
+                    height: 48,
+                    marginVertical: 20,
+                    width: 192
+                }}
+                onPress = {() => GoogleSignIn()}
+            />
 
             <MapView
                 provider = {PROVIDER_GOOGLE}
