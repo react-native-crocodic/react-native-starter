@@ -1,0 +1,8 @@
+Run android                                                                         : npx react-native run-android
+Start npm with cache reset                                                          : npm start -- --reset-cache
+Show dev menu on Android                                                            : adb shell input keyevent KEYCODE_MENU (MAC only)
+Reinstall node_modules                                                              : rm -rf node_modules && npm i
+Bundle debug build                                                                  : react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/build/intermediates/assets/debug/index.android.bundle --assets-dest ./android/app/build/intermediates/res/merged/debug
+Build APK release                                                                   : cd android && ./gradlew assembleRelease && cd ..
+Build APK release ignoring bundleReleaseJsAndAssets phase                           : cd android && ./gradlew assembleRelease -x bundleReleaseJsAndAssets && cd ..
+Create keystore (On Windows must be run from C:\Program Files\Java\jdkx.x.x_x\bin)  : keytool -genkeypair -v -keystore YOUR_KEYSTORE_NAME.keystore -alias YOUR_ALIAS -keyalg RSA -keysize 2048 -validity 10000
