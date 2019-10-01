@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Template</string>
     <string name="default_notification_channel_id">Messages</string>
+    <string name="facebook_app_id">398472917484019</string>
 </resources>

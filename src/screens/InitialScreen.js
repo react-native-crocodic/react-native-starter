@@ -22,6 +22,13 @@ import {
     statusCodes
 } from "react-native-google-signin"
 
+import {
+    LoginButton,
+    AccessToken,
+    GraphRequest,
+    GraphRequestManager
+} from 'react-native-fbsdk'
+
 const InitialScreen = () => {
     const [typedText, SetTypedText] = useState("")
     
@@ -39,6 +46,16 @@ const InitialScreen = () => {
         SetTypedText("")
 
         textInput.current.blur()
+    }
+
+    const FBResponseInfoCallback = (error, result) => {
+        if (error) {
+            alert('Error fetching data: ' + error.toString());
+        } else {
+
+        }
+
+        console.log("RESULT FACEBOOK", JSON.stringify(result))
     }
 
     async function GoogleSignIn() {
@@ -112,11 +129,46 @@ const InitialScreen = () => {
                 style = {{
                     alignSelf: "center",
                     height: 48,
-                    marginVertical: 20,
+                    marginBottom: 20,
                     width: 192
                 }}
                 onPress = {() => GoogleSignIn()}
             />
+
+            <View
+                style = {{
+                    alignItems: "center",
+                    marginBottom: 30
+                }}
+            >
+                <LoginButton
+                    publishPermissions = {["publish_actions"]}
+                    readPermissions = {["publish_actions"]}
+                    onLoginFinished = {
+                        (error, result) => {
+                        if (error) {
+                            alert("login has error: " + result.error)
+                        } else if (result.isCancelled) {
+                            alert("login is cancelled.")
+                        } else {
+                            AccessToken.getCurrentAccessToken().then(
+                            (data) => {
+                                console.log(JSON.stringify(data))
+                                const infoRequest = new GraphRequest(
+                                '/me?fields=name,picture,email',
+                                null,
+                                FBResponseInfoCallback
+                                )
+                                // Start the graph request.
+                                new GraphRequestManager().addRequest(infoRequest).start()
+                            }
+                            )
+                        }
+                        }
+                    }
+                    onLogoutFinished = {() => console.log("Logout")}
+                />
+            </View>
 
             <MapView
                 provider = {PROVIDER_GOOGLE}
