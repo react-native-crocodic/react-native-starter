@@ -3,6 +3,4 @@ const initRealmSessObj = {
     schemaName: ""
 }
 
-module.exports = {
-    NotificationID: initRealmSessObj
-}
+module.exports = {}
