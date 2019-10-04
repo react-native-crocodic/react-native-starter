@@ -4,6 +4,10 @@ import React, {
 } from 'react'
 
 import {
+    Clipboard
+} from 'react-native'
+
+import {
     createAppContainer
 } from 'react-navigation'
 
@@ -15,6 +19,7 @@ import StackViewStyleInterpolator from 'react-navigation-stack/src/views/StackVi
 
 import {
     GetPermissionSuccess,
+    GetToken,
     ListeningMessage
 } from './src/helpers/React-Native-Firebase'
 
@@ -73,6 +78,10 @@ export default () => {
             let permitted = await GetPermissionSuccess()
 
             if(permitted) {
+                let token = await GetToken()
+
+                Clipboard.setString(token)
+
                 messageListener = ListeningMessage()
             }
         }
