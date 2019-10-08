@@ -59,7 +59,7 @@ public class MainApplication extends Application implements ReactApplication {
     initializeFlipper(this); // Remove this line if you don't want Flipper enabled
 
       SdkUIFlowBuilder.init()
-              .setClientKey("Mid-client-Lgqtp0auqBXRn1wp") // client_key is mandatory //SB-Mid-client-TW6gzAJ1gYhHNABg Mid-client-Lgqtp0auqBXRn1wp
+              .setClientKey("YOUR_CLIENT_KEY") // client_key is mandatory //SB-Mid-client-TW6gzAJ1gYhHNABg Mid-client-Lgqtp0auqBXRn1wp
               .setContext(this) // context is mandatory
               .setTransactionFinishedCallback(new TransactionFinishedCallback() {
                   @Override
@@ -68,7 +68,7 @@ public class MainApplication extends Application implements ReactApplication {
                   }
               })
                // set transaction finish callback (sdk callback)
-              .setMerchantBaseUrl("https://app.midtrans.com/snap/v1/") //set merchant url (required)
+              .setMerchantBaseUrl("YOUR_SERVER_URL") //set merchant url (required)
               .enableLog(true) // enable sdk log (optional)
               /*.setColorTheme(
                       CustomColorTheme(

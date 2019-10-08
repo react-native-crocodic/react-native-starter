@@ -215,7 +215,7 @@ const InitialScreen = () => {
     )
 
     function StartGoPayTransaction() {
-        const token = "0faaa79d-3350-4833-b288-cfad25673398"
+        const token = "YOUR_TOKEN"
 
         const MyBridgingTest = NativeModules.MyBridgingTest
 

@@ -26,9 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [CONFIG setClientKey:@"Mid-client-Lgqtp0auqBXRn1wp"
+  [CONFIG setClientKey:@"YOUR_CLIENT_KEY"
            environment: MidtransServerEnvironmentProduction
-     merchantServerURL:@"https://app.midtrans.com/snap/v1/"];
+     merchantServerURL:@"YOUR_SERVER_URL"];
   
   [FIRApp configure];
   [RNFirebaseNotifications configure];
