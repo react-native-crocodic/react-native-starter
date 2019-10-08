@@ -37,8 +37,6 @@ target 'Template' do
   pod 'GoogleMaps'
   pod 'Google-Maps-iOS-Utils'
 
-  pod 'react-native-camera', path: '../node_modules/react-native-camera'
-
   pod 'Firebase/Core', '~> 6.9.0'
   pod 'Firebase/Messaging', '~> 6.9.0'
 
