@@ -144,6 +144,12 @@ PODS:
   - GTMSessionFetcher/Core (1.2.2)
   - GTMSessionFetcher/Full (1.2.2):
     - GTMSessionFetcher/Core (= 1.2.2)
+  - MidtransCoreKit (1.16.0)
+  - MidtransKit (1.16.0):
+    - MidtransCoreKit (= 1.16.0)
+    - MidtransKit/UI (= 1.16.0)
+  - MidtransKit/UI (1.16.0):
+    - MidtransCoreKit (= 1.16.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -398,6 +404,8 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Google-Maps-iOS-Utils
   - GoogleMaps
+  - MidtransCoreKit
+  - MidtransKit
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -457,6 +465,8 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - MidtransCoreKit
+    - MidtransKit
     - nanopb
     - Protobuf
 
@@ -560,6 +570,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  MidtransCoreKit: f26aeea63b1f5ccd153baf1e41c4c7d4c2474589
+  MidtransKit: 0d2ec0f285a458559dfb5560fa5d46dd2a9bd4a8
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   RCTRequired: c639d59ed389cfb1f1203f65c2ea946d8ec586e2
@@ -592,6 +604,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: e65fcecbc3ed28e369516c9ec1a5a25a18e213fe
+PODFILE CHECKSUM: 1a8647528cdafe6b73dc11fa56a59a711049a991
 
 COCOAPODS: 1.8.3

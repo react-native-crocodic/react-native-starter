@@ -7,6 +7,11 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+
+import com.midtrans.sdk.corekit.callback.TransactionFinishedCallback;
+import com.midtrans.sdk.corekit.models.snap.TransactionResult;
+import com.midtrans.sdk.uikit.SdkUIFlowBuilder;
+
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.List;
@@ -31,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
       // packages.add(new MyReactNativePackage());
       packages.add(new RNFirebaseMessagingPackage()); 
       packages.add(new RNFirebaseNotificationsPackage());
+      packages.add(new MyBridgingTestPackage());
 
       return packages;
     }
@@ -50,9 +56,30 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
-
     initializeFlipper(this); // Remove this line if you don't want Flipper enabled
-    }
+
+      SdkUIFlowBuilder.init()
+              .setClientKey("Mid-client-Lgqtp0auqBXRn1wp") // client_key is mandatory //SB-Mid-client-TW6gzAJ1gYhHNABg Mid-client-Lgqtp0auqBXRn1wp
+              .setContext(this) // context is mandatory
+              .setTransactionFinishedCallback(new TransactionFinishedCallback() {
+                  @Override
+                  public void onTransactionFinished(TransactionResult transactionResult) {
+
+                  }
+              })
+               // set transaction finish callback (sdk callback)
+              .setMerchantBaseUrl("https://app.midtrans.com/snap/v1/") //set merchant url (required)
+              .enableLog(true) // enable sdk log (optional)
+              /*.setColorTheme(
+                      CustomColorTheme(
+                              "#FFE51255",
+                              "#B61548",
+                              "#FFE51255"
+                      )
+              )*/
+              // set theme. it will replace theme on snap theme on MAP ( optional)
+              .buildSDK();
+  }
     /**
     * Loads Flipper in React Native templates.
     *

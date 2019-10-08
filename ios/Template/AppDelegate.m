@@ -19,10 +19,17 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+#import <MidtransKit/MidtransKit.h>
+#import "MyBridgingTest.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [CONFIG setClientKey:@"Mid-client-Lgqtp0auqBXRn1wp"
+           environment: MidtransServerEnvironmentProduction
+     merchantServerURL:@"https://app.midtrans.com/snap/v1/"];
+  
   [FIRApp configure];
   [RNFirebaseNotifications configure];
   [GMSServices provideAPIKey:@"AIzaSyDFDvnjpYUjPQ_UW1aj3hel0X7BNDSuuhw"]; // add this line using the api key obtained from Google Console

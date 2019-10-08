@@ -39,6 +39,7 @@
 		ED38BFE822E318AE006AB79E /* AIRGoogleMapWMSTile.m in Sources */ = {isa = PBXBuildFile; fileRef = ED38BFCC22E318AE006AB79E /* AIRGoogleMapWMSTile.m */; };
 		ED38BFE922E318AE006AB79E /* AIRGoogleMapWMSTileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED38BFCE22E318AE006AB79E /* AIRGoogleMapWMSTileManager.m */; };
 		ED38BFEA22E318AE006AB79E /* RCTConvert+GMSMapViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = ED38BFD022E318AE006AB79E /* RCTConvert+GMSMapViewType.m */; };
+		ED3F9C70234C801D00A6AEE4 /* MyBridgingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3F9C6F234C801D00A6AEE4 /* MyBridgingTest.m */; };
 		ED97CE15234307E400D16C76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED97CE13234307E300D16C76 /* GoogleService-Info.plist */; };
 		F8E89417829A483CABA54F80 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA4CA09AF3E455583420BE0 /* libRealmReact.a */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,8 @@
 		ED38BFCE22E318AE006AB79E /* AIRGoogleMapWMSTileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGoogleMapWMSTileManager.m; sourceTree = "<group>"; };
 		ED38BFCF22E318AE006AB79E /* RCTConvert+GMSMapViewType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+GMSMapViewType.h"; sourceTree = "<group>"; };
 		ED38BFD022E318AE006AB79E /* RCTConvert+GMSMapViewType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+GMSMapViewType.m"; sourceTree = "<group>"; };
+		ED3F9C6F234C801D00A6AEE4 /* MyBridgingTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBridgingTest.m; sourceTree = "<group>"; };
+		ED3F9C71234C805000A6AEE4 /* MyBridgingTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyBridgingTest.h; path = Template/MyBridgingTest.h; sourceTree = "<group>"; };
 		ED5AFE1922E1BB5000718AF8 /* Template.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Template.entitlements; path = Template/Template.entitlements; sourceTree = "<group>"; };
 		ED97CE13234307E300D16C76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED98484422E46304005FBDDD /* libreact-native-camera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-camera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +156,8 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				ED97CE13234307E300D16C76 /* GoogleService-Info.plist */,
+				ED3F9C6F234C801D00A6AEE4 /* MyBridgingTest.m */,
+				ED3F9C71234C805000A6AEE4 /* MyBridgingTest.h */,
 			);
 			name = Template;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MidtransKit/MidtransKit.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -424,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MidtransKit.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -497,6 +504,7 @@
 				ED38BFD822E318AE006AB79E /* AIRGoogleMapCalloutManager.m in Sources */,
 				ED38BFEA22E318AE006AB79E /* RCTConvert+GMSMapViewType.m in Sources */,
 				ED38BFE322E318AE006AB79E /* AIRGoogleMapPolygonManager.m in Sources */,
+				ED3F9C70234C801D00A6AEE4 /* MyBridgingTest.m in Sources */,
 				ED38BFD222E318AE006AB79E /* AIRDummyView.m in Sources */,
 				ED38BFD422E318AE006AB79E /* AIRGMSPolygon.m in Sources */,
 				ED38BFD522E318AE006AB79E /* AIRGMSPolyline.m in Sources */,

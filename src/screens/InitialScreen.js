@@ -6,6 +6,8 @@ import React, {
 
 import {
     Dimensions,
+    NativeModules,
+    Platform,
     Text,
     TextInput,
     TouchableOpacity,
@@ -188,8 +190,58 @@ const InitialScreen = () => {
                 rotateEnabled = {false}
                 onMarkerPress = {e => {}}
             />
+
+            <TouchableOpacity
+                activeOpacity = {0.7}
+                onPress = {() => StartGoPayTransaction()}
+                style = {{
+                    alignItems: "center",
+                    backgroundColor: "teal",
+                    borderRadius: 10,
+                    padding: 10
+                }}
+            >
+                <Text
+                    style = {{
+                        color: "white",
+                        fontSize: 16,
+                        fontWeight: "bold"
+                    }}
+                >
+                    Start GoPay Transaction
+                </Text>
+            </TouchableOpacity>
         </View>
     )
+
+    function StartGoPayTransaction() {
+        const token = "0faaa79d-3350-4833-b288-cfad25673398"
+
+        const MyBridgingTest = NativeModules.MyBridgingTest
+
+        if(Platform.OS == "android") {
+            MyBridgingTest.StartGojekAppActivity(
+                token,
+                (error) => {
+                    console.error(error)
+                }, 
+                (status) => {
+                    alert(status)
+                }
+            )
+        } else if(Platform.OS == "ios") {
+            MyBridgingTest.StartGojekAppActivity(
+                token,
+                (error, status) => {
+                    if (error) {
+                        console.error(error)
+                    } else {
+                        alert(status)
+                    }
+                }
+            )
+        }
+    }
 }
 
 InitialScreen.navigationOptions = {
